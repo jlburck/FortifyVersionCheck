@@ -1,0 +1,84 @@
+{
+  "id": "6571b030-ac88-11e6-5403-ef476da03d2d",
+  "name": "FortifyVersionCheck",
+  "friendlyName": "Fortify Version Check",
+  "description": "Checks for project versions in HP Fortify",
+  "author": "Lucas Burckhard",
+  "helpMarkDown": "A utility for checking HP fortify for a project version, with the option to create a missing project and/or project version",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "1",
+    "Minor": "1",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "HP Fortify Version Check $(message)",
+  "inputs": [
+    {
+      "name": "baseUrl",
+      "type": "string",
+      "label": "Fortify Base URL",
+      "defaultValue": "https://fortify/ssc",
+      "required": true,
+      "helpMarkDown": "The url you would normally use to access HP Fortify."
+    },
+    {
+      "name": "apiKey",
+      "type": "string",
+      "label": "HP Fortify API Key.",
+      "defaultValue": "$(apiKey)",
+      "required": true,
+      "helpMarkDown": "This is an API you will have already created in Fortify.  If you don't know then ask a Fortify expert for help."
+    },
+    {
+      "name": "createProject",
+      "type": "string",
+      "label": "Allow New Projects",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown": "Creates a new project in HP Fortify if the project does not already exist."
+    },
+    {
+      "name": "createProjectVersion",
+      "type": "string",
+      "label": "Allow New Project Versions",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown": "Creates a new project version in HP Fortify if the project version does not already exist."
+    },
+    {
+      "name": "projectName",
+      "type": "string",
+      "label": "Project Name",
+      "defaultValue": "RES-$(System.TeamProject)-$(Build.DefinitionName)",
+      "required": true,
+      "helpMarkDown": "This is the project name that Fortify is expecting on the target application."
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "label": "Application Version",
+      "defaultValue": "$(AssemblyInfo.AssemblyVersion.Major).$(AssemblyInfo.AssemblyVersion.Minor).$(AssemblyInfo.AssemblyVersion.Patch)",
+      "required": true,
+      "helpMarkDown": "This is the version of the application for which the fortify scan search is based."
+    },
+    {
+      "name": "copyFromVersion",
+      "type": "string",
+      "label": "Version to Copy",
+      "defaultValue": "1.0.0",
+      "required": true,
+      "helpMarkDown": "An attempt will be made to copy issues/suppressions from this version.  If this version is not found, a search is made for the latest version of the application and if found it is used as a copy source."
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "step.ps1"
+    }
+  }
+}

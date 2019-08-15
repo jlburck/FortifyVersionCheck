@@ -1,0 +1,41 @@
+{
+    "manifestVersion": 1,
+    "id": "fortifyVersionCheck",
+    "name": "FortifyVersionCheck",
+    "version": "1.1.0",
+    "publisher": "Resurgent-LucasBurckhard",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Check for Fortify Project Versions",
+    "categories": [
+        "Azure Pipelines"
+    ],    
+    "files": [
+        {
+            "path": "FortifyVersionCheck"
+        }
+    ],
+	"icons": {
+        "default": "extension-icon.png"
+    },
+	"tags": [
+		"Fortify",
+		"Version",
+		"Security"
+	],
+	"contributions": [
+        {
+            "id": "fortify-scan-check",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+				"name": "FortifyVersionCheck"
+            }
+        }
+    ]
+}
