@@ -24,5 +24,6 @@ This is usually major.minor.patch, for example 1.0.0
 This entry is similar to Application Version parameter, but this version is the one you intend to copy existing issues/suppressions from.  If this version is not found, then this task defaults to using the latest existing version if one exists.
 
 ## Helpful Content
-For creating your own custom extension, I found the following blog to be particularly helpful as a step-by-step tutorial:
+For creating your own custom extension, I found the following blogs to be particularly helpful as a step-by-step tutorial:
 http://socraticprogrammer.com/custom-azure-pipeline-build-task/ 
+https://www.andrewhoefling.com/Blog/Post/dev-ops-vsts-custom-build-task-extension
