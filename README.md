@@ -2,9 +2,10 @@
 Checks HP Fortify for projects and project versions.  If the project doesn't exist, then the task is capable of creating the project and an initial version.  If the project version doesn't exist, then the task is capable of creating the version and also capable of copying issues/suppressions from previous versions.
 
 ## To use this task with your own installed version of HP Fortify, you will need an API Key.  Below are instructions on how to create one.
-Create an API Key Pair or a Personal Access Token in Fortify on Demand
+### Create an API Key Pair or a Personal Access Token in Fortify on Demand
 The Fortify on Demand Plugin connects to Fortify on Demand through the Fortify on Demand API. Authentication requires an API key and secret pair or a personal access token.
-To create an API key and secret pair: Within Fortify on Demand, navigate to the Settings page under the Administration view, and then to the  API tab. Create an API key with the Start Scans permission. Make sure to copy the secret as it is only shown once. Note that only Security Leads can create API keys. To create a personal access token: Within Fortify on Demand, select your account name > . Create a personal access Personal Access Tokens token with the api-tenant scope. Make sure to copy the token as it is only shown once.
+#### To create an API key and secret pair: Within Fortify on Demand, navigate to the Settings page under the Administration view, and then to the  API tab. Create an API key with the Start Scans permission. Make sure to copy the secret as it is only shown once. Note that only Security Leads can create API keys. 
+#### To create a personal access token: Within Fortify on Demand, select your account name > . Create a personal access Personal Access Tokens token with the api-tenant scope. Make sure to copy the token as it is only shown once.
 
 ## Brief description of each parameter
 ### Fortify Base URL
